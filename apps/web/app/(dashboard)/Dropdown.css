@@ -1,0 +1,16 @@
+ul {
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.MuiPaper-root {
+  border-radius: 0 0 10px 10px !important;
+
+  width: 100%;
+  left: 0 !important;
+  top: 52px !important;
+  max-width: 100% !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px !important;
+}
