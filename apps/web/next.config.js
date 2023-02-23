@@ -3,10 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-
   transpilePackages: ["ui"],
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: true
 };
 
 module.exports = nextConfig;
