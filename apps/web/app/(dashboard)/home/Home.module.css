@@ -87,7 +87,7 @@
 .upcoominghr {
   margin-bottom: 8px;
   margin-top: 8px;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px dashed #c3c3c3;
 }
 .upcoomingtitle {
   overflow: hidden;

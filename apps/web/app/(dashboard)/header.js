@@ -1,5 +1,4 @@
-"use client";
-
+"use client"; 
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,7 +45,58 @@ const StyledMenu = styled((props) => <Menu {...props} />)(({ theme }) => ({
     },
   },
 }));
-
+const people = [
+  {
+    title: "Festival Pesta Rakyart",
+    img: "/event/1.jpg",
+    price: "Rp. 213.000",
+  },
+  {
+    title: "Hajatan Anak Medan 2023 - Event",
+    img: "/event/2.jpg",
+    price: "Rp. 211.000",
+  },
+  {
+    title: "CILPA FEST 2023 BEKASI",
+    img: "/event/3.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "Lemonnnnn nnn nnn nnn nnn a b c d",
+    img: "/event/1.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "Avocado",
+    img: "/event/2.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "Lemon 2",
+    img: "/event/2.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "Banana",
+    img: "/event/2.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "Watermelon",
+    img: "/event/2.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "ad",
+    img: "/event/2.jpg",
+    price: "Rp. 185.000",
+  },
+  {
+    title: "yh",
+    img: "/event/2.jpg",
+    price: "Rp. 185.000",
+  },
+];
 export default function Header() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -59,7 +109,17 @@ export default function Header() {
   const handleClosee = () => {
     setAnchorEl(null);
   };
+  const [selectedPerson, setSelectedPerson] = React.useState(people[0])
+  const [query, setQuery] = React.useState('')
 
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.title.toLowerCase().includes(query.toLowerCase())
+        })
+
+        
   return (
     <div className={styles.header}>
       <div className={styles.headerleft}>
@@ -92,15 +152,17 @@ export default function Header() {
             <div className={styles.searchbar}>
               <div className={styles.searchbarinput}>
                 <label onClick={handleClose} className={styles.searchicon}>
-                  <ArrowBackIcon />
+                  <ArrowBackIcon  />
+                
                 </label>
-
+                <div className={styles.labelicon}>Back</div>
                 <input
                   type="search"
                   id="search"
-                  placeholder="Search"
+                  placeholder="Search..."
                   enterKeyHint="search"
                   className={styles.searchinput}
+                  onChange={(event) => setQuery(event.target.value)} 
                 />
 
                 <button
@@ -111,10 +173,19 @@ export default function Header() {
                   Cancel
                 </button>
               </div>
-
-              <div className={styles.searchvalue} onClick={handleClose}>
-                asdd
-              </div>
+              {filteredPeople.map((person) => (
+              <Link href="/id" className={styles.searchvalue}  key={person.title} onClick={handleClose}>
+             {person.title} {person.price}
+             <Image
+                
+                      width={288}
+                      height={216}
+                      alt={person.title}
+                      src={person.img} 
+                    />
+                     
+              </Link>
+                  ))}
             </div>
           </div>
         </div>

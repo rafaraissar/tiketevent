@@ -1,10 +1,11 @@
-"use client";
-import React, { useState, useEffect } from "react";
+ 
+ 
 import Categorysearch from "./categorysearch";
 import styles from "./Home.module.css";
-import Mainbanner from "./mainbanner";
-import Upcooming from "./upcooming";
+import Mainbanner from "./mainbanner"; 
+import dynamic from "next/dynamic";
 
+const Upcooming = dynamic(() => import("./upcooming"));
 export default function Home() {
   return (
     <div className={styles.contenthome}>

@@ -1,0 +1,29 @@
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height:200vh;
+}
+.tab{
+  font-size: 16px !important;
+ 
+ 
+ 
+} 
+.tab::after{
+background-color: #303030 !important;
+} 
+ 
+.highlight{  
+  
+ 
+}
+ 
+.active{  
+ color: #303030 !important;
+  
+ }
+.scroll-container{
+  padding-left: 0px !important;
+}

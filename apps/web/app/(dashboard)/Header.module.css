@@ -265,10 +265,13 @@
 .dropdownheaderitemvl {
   border-left: 1px solid #e4e4e4;
   margin: 20px auto;
-}
+} 
 .fiturmoreimg {
-  width: 35%;
-  height: auto;
+  width: 267px;
+  height: 201px;
+  margin: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 .fiturmore {
   width: 35%;
@@ -319,6 +322,25 @@
   margin: 5px 0;
   font-size: 13px;
 }
+.labelicon{
+ cursor: default;
+  opacity: 0; 
+  position: absolute;
+background-color:  rgba(0, 0, 0);
+color: #fff;
+border-radius: 4px;
+font-size: 14px; 
+padding: 4px 8px;
+font-family: "Roboto","Arial",sans-serif;
+transition: 0.2s ease-in-out;
+translate: -60px 45px;
+ 
+}
+.searchicon:hover ~ .labelicon{
+ 
+ opacity: 0.6;
+}
+
 @media only screen and (max-width: 1250px) {
   .header {
     padding: 0 15px 0 15px;

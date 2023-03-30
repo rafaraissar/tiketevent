@@ -8,8 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Home.module.css";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Error from "./error";
+import { Swiper, SwiperSlide } from "swiper/react"; 
 import "./Upcooming.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -33,8 +32,8 @@ export default function Upcooming() {
     width: undefined,
   });
 
-  const isMobile = windowSize.width <= 900;
-  const isTablet = windowSize.width <= 1250;
+  const isMobile = windowSize.width >= 900; 
+  const isWeb = windowSize.width >= 1251;
   const upcooming = [
     {
       title: "Festival Pesta Rakyart",
@@ -77,12 +76,12 @@ export default function Upcooming() {
       price: "Rp. 185.000",
     },
     {
-      title: "Watermelon",
+      title: "ad",
       img: "/event/2.jpg",
       price: "Rp. 185.000",
     },
     {
-      title: "Watermelon",
+      title: "yh",
       img: "/event/2.jpg",
       price: "Rp. 185.000",
     },
@@ -98,7 +97,7 @@ export default function Upcooming() {
         </Link>
       </div>
       <Swiper
-        slidesPerView={(isMobile && 1) || (isTablet && 3) || "4"}
+        slidesPerView={ isWeb && 4 || isMobile && 3 || "1"}
         spaceBetween={10}
         navigation={true}
         loop={true}
@@ -106,8 +105,8 @@ export default function Upcooming() {
         className={styles.swiperupcooming}
       >
         {upcooming.map((item, index) => (
-          <SwiperSlide>
-            <Link href="/id" className={styles.titlecontent}>
+          <SwiperSlide key={item.title}>
+            <Link href="/event/detail-page" className={styles.titlecontent}>
               <Card sx={{ maxWidth: 280 }} className={styles.cardupcooming}>
                 <CardActionArea>
                   <div>
@@ -116,7 +115,7 @@ export default function Upcooming() {
                       width={288}
                       height={216}
                       alt={item.title}
-                      src={item.img}
+                      src={item.img} 
                     />
                   </div>
 
